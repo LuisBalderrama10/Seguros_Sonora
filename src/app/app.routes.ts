@@ -1,17 +1,27 @@
 import { Routes } from '@angular/router';
 
+import { RouterModule } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
-import { LabsComponent } from './pages/labs/labs.component';
 
+
+import { LabsComponent } from './modules/main/pages/labs/labs.component';
+import { Pag2Component } from './modules/main/pages/pag2/pag2.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-    {
-        path: 'home',
-        component: HomeComponent
-    },
+
     {
         path: '',
         component: LabsComponent
-    }
+    },
+    {
+        path: 'prueba',
+        component: Pag2Component
+    },
+
 ];
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }

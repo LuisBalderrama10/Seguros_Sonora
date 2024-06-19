@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguros Sonora</title>
+</head>
+
+<body class="bg-slate-50">
+  <app-sidebar></app-sidebar>
+
+  <div class="lg:w-75% mx-2  lg:ml-60 lg:flex lg:flex-col lg:pl-4">
+    <app-buscador></app-buscador>
+
+
+    <!-- Contenedor Dashboard -->
+    <div class="container mx-auto p-4">
+      <h1 class="text-1xl mb-2 text-gray-400">Inicio / Dashboard</h1>
+      <div class="bg-white p-4 ">
+
+        <div class="flex gap-20 mb-2">
+          <div class="w-1/3" style="background-color:#960e53; padding: 15px; border-radius: 10px;">
+            <h2 class="text-xl font-bold text-white">TOTAL DE BIENES ASEGURADOS</h2>
+            <p class="text-4xl font-bold text-white" style="text-align: right;">765</p>
+          </div>
+
+          <div class="w-1/3"
+            style="background-color:#ffffff; padding: 15px; border-radius: 10px; border: 1px solid #ccc; position: relative;">
+            <h3 class="text-lg font-bold text-gray-600" style="display: inline-block; margin-right: 10px;">INMUEBLES
+            </h3>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApUlEQVR4nO2TMQrDMBAE5w8pAiavTJFAnme/Km42jQ3CKNYp0kkpNHCFsNDgXQ4GHVgA/ThLL/Fc+tcyzBt4AFOpLGR//Oz8xAEZxFNmNab+ZZhrptjUvyKzAnfggiOKRPvyFJ6JbxXWTaneY5c8xLNFHEZdS2yKek18Lzm7PZwt1pdo3KNWa3EKt6j/XqxeUWt0vDE6Vqs9PtJsj4+47zGV7vuLP++VhY9msx7dAAAAAElFTkSuQmCC"
+              alt="Vehiculos"
+              style="display: inline-block; position: absolute; top: 10px; right: 20px; width: 40px; height: 40px;">
+            <p class="text-4xl font-bold text-[#960e53]" style="text-align: right; margin-top: 20px;">78</p>
+          </div>
+
+          <div class="w-1/3"
+            style="background-color:#ffffff; padding: 15px; border-radius: 10px; border: 1px solid #ccc; position: relative;">
+            <h3 class="text-lg font-bold text-gray-600" style="display: inline-block; margin-right: 10px;">VEHÍCULOS
+            </h3>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA30lEQVR4nO2SvQ3CMBCFX0EB7JEgWISKAWADxAz8rYEQLXsQU1LBEqGgCf2hSK+IUGLfmRQUedLJsvQ+vzvbQKdOSu0B5AAkUDmALSK1UATIV81jgm6Elwrvit6SMWlC8AVgoPAP6RWyau0InQzMkYzprR6EZgZmSuauBUYECgB9Q1APwJPsWANsaD7DrgPZdch4jfjS0lCZL0gq1+a4ag8uahhvUGlMuC/XtzIkqWG8QS7iOl0DE5wo5T41TJTWMN4godEpQ8TDNCpr8dddfEHVqYJd/cpllq5a4Dr9iT5v+bczruhY5AAAAABJRU5ErkJggg=="
+              alt="Vehiculos"
+              style="display: inline-block; position: absolute; top: 10px; right: 20px; width: 40px; height: 40px;">
+            <p class="text-4xl font-bold text-[#960e53]" style="text-align: right; margin-top: 20px;">652</p>
+          </div>
+
+          <div class="w-1/3"
+            style="background-color:#ffffff; padding: 15px; border-radius: 10px; border: 1px solid #ccc; position: relative;">
+            <h3 class="text-lg font-bold text-gray-600" style="display: inline-block; margin-right: 10px;">AERONAVES
+            </h3>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABlElEQVR4nO2ZvUoDQRSFP8TWgG0wojYWNoKFhS9gk1ewCfgKtmktfYA0ooUSUBCCYGFj5V+XwipdOoVsoYVJJizcQNis2Vmz652V+eBUszt7Tu4ddmYDnv9JBWgCgegK2KRA5t8BE9GHjDlPM8b8WJcUgGBGgB4FwCTIeYwPoIyvgDa+Atr4CmjjK6CNr4AGC0AVeLCowDNwACziAEvAIfBmYTyqDnAELGsYLwN1OWWZORUAJ8DaXxjfAU6B7wyMRzUAboC9vPr7LgfTJs91Mk9/Z6XOb9ZJlv2dlQKbdbIKXAB9BwybH9QXj6HXKZ4cMGgs9RgXYOCAMWOp0OsUtr3YBm6BhqyVGrAPbAElizlKcm14T03maMic7YTvSpOa4tzCnA2pHxxDUsgzciSLAKr4ANr4CmhT2ArsAi2LAC251hm25Z+XYcq3abg9Vw2yYfmL21RkXSPAa4Z7mxeNAGlbZpaGrgToAvfAV8zYp/R915UAx8C1bLSqcpIbU5GF3ROFh5CVifGy3FOXOcK5PB4P6RkBPRx0+CX4QqQAAAAASUVORK5CYII="
+              alt="Vehiculos"
+              style="display: inline-block; position: absolute; top: 10px; right: 20px; width: 40px; height: 40px;">
+            <p class="text-4xl font-bold text-[#960e53]" style="text-align: right; margin-top: 20px;">35</p>
+          </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------------------->
+        
+        <div class="flex mb-4 mt-20">
+          <div class="container mx-auto p-4 border border-gray-300 rounded-lg flex-1 mr-10">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Bienes Asegurados</h2>
+            <div class="flex items-center justify-center mb-4">
+              <div class="flex">
+                <div class="flex items-center justify-center space-x-2">
+                  <div class="w-4 h-4 bg-[#960e53]"></div>
+                  <span class="text-sm font-medium text-gray-800">Inmuebles</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2 ml-2">
+                  <div class="w-4 h-4 bg-gray-500"></div>
+                  <span class="text-sm font-medium text-gray-800">Vehículos</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2 ml-2">
+                  <div class="w-4 h-4 bg-gray-300"></div>
+                  <span class="text-sm font-medium text-gray-800">Aeronaves</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="relative w-64 h-64">
+                <svg class="absolute w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="40" cy="40" r="30" stroke="#960e53" stroke-width="10" fill="transparent" 
+                  stroke-dasharray="167.55161219145562 167.55161219145562" />
+                  <circle cx="40" cy="40" r="30" stroke="#717171" stroke-width="10" stroke-linecap="round"
+                    stroke-dasharray="251.32741228718345 251.32741228718345" fill="transparent" />
+                  <circle cx="40" cy="40" r="30" stroke="#d81e5b" stroke-width="10" stroke-linecap="round"
+                    stroke-dasharray="62.83185307179586 251.32741228718345" fill="transparent" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mx-auto p-4 border border-gray-300 rounded-lg flex-1 mr-10">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Importe de Polizas </h2>
+            <div class="flex items-center justify-center mb-4">
+              <div class="flex">
+                <div class="flex items-center justify-center space-x-2">
+                  <div class="w-4 h-4 bg-[#dc7f37]"></div>
+                  <span class="text-sm font-medium text-gray-800">Inmuebles </span>
+                </div>
+                <div class="flex items-center justify-center space-x-2 ml-2">
+                  <div class="w-4 h-4 bg-gray-500"></div>
+                  <span class="text-sm font-medium text-gray-800">Vehículos </span>
+                </div>
+                <div class="flex items-center justify-center space-x-2 ml-2">
+                  <div class="w-4 h-4 bg-[#dc7f37]"></div>
+                  <span class="text-sm font-medium text-gray-800">Aeronaves </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="relative w-64 h-64">
+                <svg class="absolute w-full h-full" viewBox="0 0 100 100">
+                  <!-- Primer círculo tomando el valor del restante -->
+                  <circle cx="40" cy="40" r="30" stroke="#ef4444" stroke-width="10" fill="transparent" 
+                          stroke-dasharray="167.55161219145562 167.55161219145562" />
+                
+                  <!-- Segundo círculo -->  
+                  <circle cx="40" cy="40" r="30" stroke="#6b7280" stroke-width="10" stroke-linecap="butt"
+                          stroke-dasharray="83.77580409572781 251.32741228718345" fill="transparent" stroke-dashoffset="335.09811658236726" transform="rotate(120 40 40)" />
+                
+                  <!-- Tercer círculo -->
+                  <circle cx="40" cy="40" r="30" stroke="#dc7f37" stroke-width="10" stroke-linecap="butt"
+                          stroke-dasharray="83.77580409572781 251.32741228718345" fill="transparent" stroke-dashoffset="335.09811658236726" transform="rotate(240 40 40)" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mx-auto p-4 border border-gray-300 rounded-lg flex-1 mr-10">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Siniestros </h2>
+            <div class="flex items-center justify-center mb-4">
+              <div class="flex">
+                <div class="flex items-center justify-center space-x-2">
+                  <div class="w-4 h-4 bg-[#dc7f37]"></div>
+                  <span class="text-sm font-medium text-gray-800">Inmuebles </span>
+                </div>
+                <div class="flex items-center justify-center space-x-2 ml-2">
+                  <div class="w-4 h-4 bg-gray-500"></div>
+                  <span class="text-sm font-medium text-gray-800">Vehículos </span>
+                </div>
+                <div class="flex items-center justify-center space-x-2 ml-2">
+                  <div class="w-4 h-4 bg-[#dc7f37]"></div>
+                  <span class="text-sm font-medium text-gray-800">Aeronaves </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+              <div class="relative w-64 h-64">
+                <svg class="absolute w-full h-full" viewBox="0 0 100 100">
+                  <!-- Primer círculo tomando el valor del restante -->
+                  <circle cx="40" cy="40" r="30" stroke="#ef4444" stroke-width="10" fill="transparent" 
+                          stroke-dasharray="167.55161219145562 167.55161219145562" />
+                
+                  <!-- Segundo círculo -->  
+                  <circle cx="40" cy="40" r="30" stroke="#6b7280" stroke-width="10" stroke-linecap="butt"
+                          stroke-dasharray="83.77580409572781 251.32741228718345" fill="transparent" stroke-dashoffset="335.09811658236726" transform="rotate(120 40 40)" />
+                
+                  <!-- Tercer círculo -->
+                  <circle cx="40" cy="40" r="30" stroke="#dc7f37" stroke-width="10" stroke-linecap="butt"
+                          stroke-dasharray="83.77580409572781 251.32741228718345" fill="transparent" stroke-dashoffset="335.09811658236726" transform="rotate(240 40 40)" />
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Obtener todas las opciones principales con desplegables
+      const opcionesConDesplegable = document.querySelectorAll(".opcion-con-desplegable");
+
+      // Agregar evento de clic a cada opción principal
+      opcionesConDesplegable.forEach(function (opcion) {
+        opcion.addEventListener("click", function () {
+          // Obtener el desplegable asociado a la opción
+          const desplegable = opcion.querySelector(".desplegable");
+
+          // Alternar la clase "hidden" para mostrar u ocultar el desplegable
+          desplegable.classList.toggle("hidden");
+        });
+      });
+    });
+  </script>
+</body>
+<!--830c47 rgb(131, 12, 71) hsl(330, 83%, 28%)-->
+
+</html>
