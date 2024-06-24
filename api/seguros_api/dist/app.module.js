@@ -13,6 +13,9 @@ const vehiculos_controller_1 = require("./vehiculo/vehiculos.controller");
 const vehiculos_services_1 = require("./vehiculo/vehiculos.services");
 const aseguradora_controllers_1 = require("./aseguradora/aseguradora.controllers");
 const aseguradoras_services_1 = require("./aseguradora/aseguradoras.services");
+const connection_service_1 = require("./connection.service");
+const test_controller_1 = require("./test.controller");
+const vehiculo_entity_1 = require("./vehiculo/vehiculo.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -35,7 +38,10 @@ exports.AppModule = AppModule = __decorate([
                 synchronize: true,
                 logging: 'all',
             }),
+            TypeOrm_1.TypeOrmModule.forFeature([vehiculo_entity_1.VehiculoEntity]),
         ],
+        controllers: [vehiculos_controller_1.VehiculoController, aseguradora_controllers_1.AseguradoraController, test_controller_1.TestController],
+        providers: [vehiculos_services_1.VehiculoServicio, aseguradoras_services_1.AseguradoraServicio, connection_service_1.ConnectionService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

@@ -4,6 +4,9 @@ import { VehiculoController } from './vehiculo/vehiculos.controller';
 import { VehiculoServicio } from './vehiculo/vehiculos.services';
 import { AseguradoraController } from './aseguradora/aseguradora.controllers';
 import { AseguradoraServicio } from './aseguradora/aseguradoras.services';
+import { ConnectionService } from './connection.service';
+import { TestController } from './test.controller';
+import { VehiculoEntity } from './vehiculo/vehiculo.entity';
 
 @Module({
   imports: [],
@@ -11,6 +14,8 @@ import { AseguradoraServicio } from './aseguradora/aseguradoras.services';
   providers: [VehiculoServicio, AseguradoraServicio],
 })
 
+
+//Para probar conexion usar este link http://localhost:3000/test/connection
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -24,6 +29,10 @@ import { AseguradoraServicio } from './aseguradora/aseguradoras.services';
       synchronize: true,
       logging: 'all', // Habilitar logging
     }),
+    TypeOrmModule.forFeature([VehiculoEntity]), // Importar la entidad que usarás en el test
   ],
+  controllers: [VehiculoController, AseguradoraController, TestController],
+  providers: [VehiculoServicio, AseguradoraServicio, ConnectionService],
 })
 export class AppModule {}
+
