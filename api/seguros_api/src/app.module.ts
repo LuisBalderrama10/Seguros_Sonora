@@ -1,17 +1,27 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/TypeOrm';
+
+
 import { VehiculoController } from './vehiculo/vehiculos.controller';
 import { VehiculoServicio } from './vehiculo/vehiculos.services';
 import { AseguradoraController } from './aseguradora/aseguradora.controllers';
 import { AseguradoraServicio } from './aseguradora/aseguradoras.services';
+import { FaeronvaeController } from './aeronave/fabricante.aeronave.controller';
+import { FabricanteAeronaveServicio } from './aeronave/fabricante.aeronave.service';
+import { MarcaVehiculoController } from './vehiculo/marca.vehiculo.controller';
+import { MarcaVehiculoServicio } from './vehiculo/marca.vehiculo.services';
+
+
 import { ConnectionService } from './connection.service';
 import { TestController } from './test.controller';
 import { VehiculoEntity } from './vehiculo/vehiculo.entity';
 
+
+
 @Module({
   imports: [],
-  controllers: [VehiculoController, AseguradoraController],
-  providers: [VehiculoServicio, AseguradoraServicio],
+  controllers: [VehiculoController, AseguradoraController, FaeronvaeController, MarcaVehiculoController],
+  providers: [VehiculoServicio, AseguradoraServicio, FabricanteAeronaveServicio, MarcaVehiculoServicio],
 })
 
 
