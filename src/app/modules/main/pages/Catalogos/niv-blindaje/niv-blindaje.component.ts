@@ -5,12 +5,12 @@ import { BuscadorComponent } from '../../../components/buscador/buscador.compone
 import { SidebarComponent } from '../../../components/sidebar/sidebar.component'
 
 @Component({
-  selector: 'app-fab-aeronaves',
+  selector: 'app-niv-blindaje',
   standalone: true,
   imports: [RouterOutlet, CommonModule, SidebarComponent, BuscadorComponent],
-  templateUrl: './fab-aeronaves.component.html',
-  styleUrl: './fab-aeronaves.component.css'
+  templateUrl: './niv-blindaje.component.html',
+  styleUrl: './niv-blindaje.component.css'
 })
-export class FabAeronavesComponent {
+export class NivBlindajeComponent {
 
 }

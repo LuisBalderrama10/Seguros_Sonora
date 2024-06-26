@@ -30,4 +30,29 @@ export class SidebarComponent {
   redirigirAPagina2(): void {
     this.router.navigate(['/']);
   }
+  redirigirAAseguradoras(): void {
+    this.router.navigate(['/Aseguradoras']);
+  }
+  redirigirAFabAero(): void {
+    this.router.navigate(['/FabricantesdeAeronaves']);
+  }
+  redirigirAMarcVehic(): void {
+    this.router.navigate(['/MarcasdeVehiculos']);
+  }
+  redirigirANivBlin(): void {
+    this.router.navigate(['/NivelesdeBlindaje']);
+  }
+  redirigirARamoPoli(): void {
+    this.router.navigate(['/RamosdePóliza']);
+  }
+  redirigirATipoAero(): void {
+    this.router.navigate(['/TiposdeAeronave']);
+  }
+  redirigirATipoDoc(): void {
+    this.router.navigate(['/TiposdeDocumentos']);
+  }
+  redirigirATipoVehic(): void {
+    this.router.navigate(['/TiposdeVehículos']);
+  }
+
 }
