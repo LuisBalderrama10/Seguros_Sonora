@@ -12,14 +12,22 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   isMenuOpened: boolean = false;
-
+  isMenuOpened2: boolean = false;
   toggleMenu(event: Event): void {
     this.isMenuOpened = !this.isMenuOpened;
     event.stopPropagation();
   }
+  toggleMenu2(event2: Event): void {
+    this.isMenuOpened2 = !this.isMenuOpened2;
+    event2.stopPropagation();
+  }
   @HostListener('document:click', ['$event'])
   closeDropdown(event: Event): void {
     this.isMenuOpened = false;
+  }
+  @HostListener('document:click', ['$event2'])
+  closeDropdown2(event2: Event): void {
+    this.isMenuOpened2 = false;
   }
 
   constructor(private router: Router) { }
@@ -53,6 +61,9 @@ export class SidebarComponent {
   }
   redirigirATipoVehic(): void {
     this.router.navigate(['/TiposdeVehículos']);
+  }
+  redirigirAUsuarios(): void {
+    this.router.navigate(['/Usuarios']);
   }
 
 }

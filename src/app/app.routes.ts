@@ -14,6 +14,7 @@ import { RamPolizasComponent } from './modules/main/pages/Catalogos/ram-polizas/
 import { TipoAeronaveComponent } from './modules/main/pages/Catalogos/tipo-aeronave/tipo-aeronave.component'
 import { TipoDocumentComponent } from './modules/main/pages/Catalogos/tipo-document/tipo-document.component'
 import { TipoVehiculoComponent } from './modules/main/pages/Catalogos/tipo-vehiculo/tipo-vehiculo.component'
+import { UsuariosComponent } from './modules/main/pages/Usuarios/Usuarios.component'
 
 import { NgModule } from '@angular/core';
 
@@ -58,6 +59,10 @@ export const routes: Routes = [
     {
         path: 'TiposdeVehículos',
         component: TipoVehiculoComponent
+    },
+    {
+        path: 'Usuarios',
+        component: UsuariosComponent
     },
 
 ];

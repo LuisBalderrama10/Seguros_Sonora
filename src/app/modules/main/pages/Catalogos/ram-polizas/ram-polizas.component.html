@@ -15,6 +15,43 @@
     <!-- Contenedor Dashboard -->
     <div class="container mx-auto p-4">
       <h1 class="text-1xl mb-2 text-gray-400">Inicio / Ramos de Polízas</h1>
+      <div class="button-container flex justify-between items-center p-4">
+        <div>
+             <button style="background-color: #237469;"
+          class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAARklEQVR4nO3TuwkAIBAE0e2/LA/rGkEvVBM1EPY1MHAfyW4CKhAvA50DSyS9ggOMOz8VuxnHhUDxkvEfLJH0cyCO7tw00QDMDQ0ibM3nhAAAAABJRU5ErkJggg=="
+            class="w-4 h-4 mr-2 inline">
+          Agregar
+        </button>
+        <button style="background-color: #dc7f37;"
+          class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3QsQ2AMAxE0dsMtqBhlEikZFvoQfrIRURDEEJ25zfAv8RSkgQUYAcm94MAldsJzJED5nD5CTC8jGxer66dkeIRpzNSPePN+jv6Id6MCowvGX+SZ3E+iwmNm9C4CY2b0HhSxwXmjhXxaepfLwAAAABJRU5ErkJggg=="
+            class="w-4 h-4 mr-2 inline">
+          Editar
+        </button>
+        <button style="background-color: #a12e3b;"
+          class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACTUlEQVR4nO2awU4TQRjHRwEv0EOhfQnbJ0C8CRcIMVESH4K0FN6hgK9RE+NrCNy4lIAgatSDPgCEgx78maHfJpNxWjqdKTvI/pLNbv/7beb7z8w3O2lWqYL/FOARsAv85GZ+ANv6GZUawA7+tFVq0OtlzfwQsU+ykVGpgTCu+FsjaSPAAemwH2Jkj3R4H2NkckXFojASCVWMiMV9G5F5440doudrpF+sr+6iMGLj02uhugsVC5/GQnUXhREbn14L1V2oWPg0Fqq7KIzY+PRaqO5CxcKnsVDdRWHExqfXQnUXKhY+jYXqLgojNj69Fqq7ULHwaSxU78NH4C3wApi6y0ZMvgHLd8HIMbAB1IBpOfR1Czgx4vQ//w9SNPILWAcmBuQxATSA3/LM6ySMAM8NE8888lkUM3+A1VyN6KIFvsv1usSUZVrNOXKYk3tl+d2UZz8Bk3kaeWXUxPV0olcHmi5QMZ6tiKZpijYJfBBtLU8j7+S8YfV61zBTlcPUZo34TdE7eRr5IufHVltVK/Gua5Qkti73zvM0kjHjaK8MHBox/5iQuJLcv4xmBFgAnnroGSVHe1XgyMPIRUwjo1KLMLXOUjDSGlDsFWvFsot9K3qxB3ASsPyeivYyBSOahlHkDbPXjRxm5V7ZMn0+9I7Y+BhgXOjtxuJQyfTyWRp1i6K/Gxk3OrHmoO2GTKeWsWlsj/LBzPYtjExWM5uyIs3IUZfCzrYkeiTawEOVGsAK8FUSHYSuieGnUx7I1FkD3gCfgSv91paR6OjVqV9h/wVUe9CO6DWxAgAAAABJRU5ErkJggg=="
+            class="w-4 h-4 mr-2 inline">
+          Eliminar
+        </button>
+        </div>
+        <div class="flex items-center">
+        <span class="text-gray-600 text-lg font-medium">Exportar a:</span>
+        <button class="ml-4 rounded-full bg-gray-200 px-4 py-2 text-gray-600 font-medium">
+          <span class="flex items-center">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB90lEQVR4nGNgGAWjYBSMgiEJxCYEZ4hNCP4oNjHkP6lY81A96fhg3Uetg3Xp1PQAWY4n2wOHwPgD9TxApuMp9MD/UQ/AwGgMHBpNQsM0CXEXWhRwF1p84Smy+E8RLrH8L9TsMSAe+EKx42G42OI/T4MrBpZck0o2ZiAEqOZ4GB71QOpoDPwXLrP9f+f1o/8gULVpEjx5aLUE/v/x+9f/b79+/NdpDR7cSShiXhnYA2++vP8vUekEFlt5didYrGHr9KGRB3ZdPw52cOO2Gf8te2L///339//tVw/BMTQkPGDSGfn/15/f/99/+/T/2L0L///9+/ffa1r20CqFphxc8R8Glp/ZPvSK0YUnNsE9sOLsDoIeEHfXwsBC04LIxgyUeMBzahY42Zx6cPn/kbvnwZ7wn5k/NDwgXGb7/8aL+2BHg9K9/YQksGcevn32X6zCcfB7oHvPArDjd1w7ChfbdOkAWKx378LB7QGzrihw6QMqNq174+Dihh1h/3///QPGVr2xg9cDPBTgUQ9MG2kxwF1k/plqHigwHwAPFJrnUcUTBeb/hKL0v4m7a75Hx6oZDmRjBmoBCQ+t/+Ri9TR7sjHDqAegYDQG0kaT0EhPQu5aH+nvATvqTXBIemilSXhofaCfB+w+qKbYp1LNA6NgFIyCUcBADQAA6UC2Ipn+q/gAAAAASUVORK5CYII="
+              class="h-5 w-5 text-gray-500" alt="Excel Icon">
+            <span class="ml-2">Excel</span>
+          </span>
+        </button>
+      </div>
+      </div>
+
     </div>
   </div>    
     
