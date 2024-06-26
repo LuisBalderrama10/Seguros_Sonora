@@ -1,16 +1,17 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/TypeOrm';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 
 import { VehiculoController } from './vehiculo/vehiculos.controller';
 import { VehiculoServicio } from './vehiculo/vehiculos.services';
 import { AseguradoraController } from './aseguradora/aseguradora.controllers';
 import { AseguradoraServicio } from './aseguradora/aseguradoras.services';
-import { FaeronvaeController } from './aeronave/fabricante.aeronave.controller';
-import { FabricanteAeronaveServicio } from './aeronave/fabricante.aeronave.service';
-import { MarcaVehiculoController } from './vehiculo/marca.vehiculo.controller';
-import { MarcaVehiculoServicio } from './vehiculo/marca.vehiculo.services';
-
+import { FaeronvaeController } from './aeronave/fabricante_aeronave/fabricante.aeronave.controller';
+import { FabricanteAeronaveServicio } from './aeronave/fabricante_aeronave/fabricante.aeronave.service';
+import { MarcaVehiculoController } from './vehiculo/marca_vehiculo/marca.vehiculo.controller';
+import { MarcaVehiculoServicio } from './vehiculo/marca_vehiculo/marca.vehiculo.services';
+import { AeronaveController } from './aeronave/aeronave.controller';
+import { AeronaveServicio } from './aeronave/aeronave.services';
 
 import { ConnectionService } from './connection.service';
 import { TestController } from './test.controller';
@@ -18,14 +19,6 @@ import { VehiculoEntity } from './vehiculo/vehiculo.entity';
 
 
 
-@Module({
-  imports: [],
-  controllers: [VehiculoController, AseguradoraController, FaeronvaeController, MarcaVehiculoController],
-  providers: [VehiculoServicio, AseguradoraServicio, FabricanteAeronaveServicio, MarcaVehiculoServicio],
-})
-
-
-//Para probar conexion usar este link http://localhost:3000/test/connection
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -41,8 +34,21 @@ import { VehiculoEntity } from './vehiculo/vehiculo.entity';
     }),
     TypeOrmModule.forFeature([VehiculoEntity]), // Importar la entidad que usarás en el test
   ],
-  controllers: [VehiculoController, AseguradoraController, TestController],
-  providers: [VehiculoServicio, AseguradoraServicio, ConnectionService],
+  controllers: [
+    VehiculoController,
+    AseguradoraController,
+    FaeronvaeController,
+    MarcaVehiculoController,
+    AeronaveController,
+    TestController,
+  ],
+  providers: [
+    VehiculoServicio,
+    AseguradoraServicio,
+    FabricanteAeronaveServicio,
+    MarcaVehiculoServicio,
+    AeronaveServicio,
+    ConnectionService,
+  ],
 })
 export class AppModule {}
-
