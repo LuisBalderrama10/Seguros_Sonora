@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 
 
 
-import { LabsComponent } from './modules/main/pages/labs/labs.component';
-import { Pag2Component } from './modules/main/pages/pag2/pag2.component';
+import { LabsComponent } from './modules/main/pages/Dashboard/labs.component';
+import { Pag2Component } from './modules/main/pages/Vehiculos/pag2.component';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [

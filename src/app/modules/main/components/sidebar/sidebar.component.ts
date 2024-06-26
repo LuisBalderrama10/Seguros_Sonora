@@ -25,11 +25,9 @@ export class SidebarComponent {
   constructor(private router: Router) { }
 
   redirigirAPagina(): void {
-    // Navega a la página deseada (reemplaza 'ruta-deseada' con la ruta real)
     this.router.navigate(['/prueba']);
   }
   redirigirAPagina2(): void {
-    // Navega a la página deseada (reemplaza 'ruta-deseada' con la ruta real)
     this.router.navigate(['/']);
   }
 }
