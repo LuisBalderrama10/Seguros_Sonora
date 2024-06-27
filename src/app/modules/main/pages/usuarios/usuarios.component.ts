@@ -5,13 +5,12 @@ import { SidebarComponent } from '../../components/sidebar/sidebar.component'
 import { BuscadorComponent } from '../../components/buscador/buscador.component'
 
 @Component({
-  selector: 'app-Usuarios',
-  templateUrl: './Usuarios.component.html',
+  selector: 'app-usuarios',
+  standalone: true,
   imports: [RouterOutlet, CommonModule, SidebarComponent, BuscadorComponent],
-  styleUrls: ['./Usuarios.component.css']
+  templateUrl: './usuarios.component.html',
+  styleUrl: './usuarios.component.css'
 })
 export class UsuariosComponent {
-
-
 
 }
