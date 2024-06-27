@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const ormconfig_1 = require("./ormconfig");
 const vehiculos_controller_1 = require("./vehiculo/vehiculos.controller");
 const vehiculos_services_1 = require("./vehiculo/vehiculos.services");
 const aseguradora_controllers_1 = require("./aseguradora/aseguradora.controllers");
@@ -22,24 +23,15 @@ const aeronave_services_1 = require("./aeronave/aeronave.services");
 const connection_service_1 = require("./connection.service");
 const test_controller_1 = require("./test.controller");
 const vehiculo_entity_1 = require("./vehiculo/vehiculo.entity");
+const isTestEnv = process.env.NODE_ENV === 'test';
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            typeorm_1.TypeOrmModule.forRoot({
-                type: 'postgres',
-                host: '192.168.90.209',
-                port: 5432,
-                username: 'seguros_inst_db',
-                password: '1920siadmin',
-                database: 'sonora_dig',
-                entities: [__dirname + '/**/*.entity{.ts,.js}'],
-                synchronize: true,
-                logging: 'all',
-            }),
-            typeorm_1.TypeOrmModule.forFeature([vehiculo_entity_1.VehiculoEntity]),
+            ...(isTestEnv ? [] : [typeorm_1.TypeOrmModule.forRoot(ormconfig_1.ormConfig)]),
+            ...(isTestEnv ? [] : [typeorm_1.TypeOrmModule.forFeature([vehiculo_entity_1.VehiculoEntity])]),
         ],
         controllers: [
             vehiculos_controller_1.VehiculoController,

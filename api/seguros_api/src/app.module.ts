@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
+import { ormConfig } from './ormconfig';  // Asegúrate de que la ruta es correcta
 
 import { VehiculoController } from './vehiculo/vehiculos.controller';
 import { VehiculoServicio } from './vehiculo/vehiculos.services';
@@ -17,22 +17,13 @@ import { ConnectionService } from './connection.service';
 import { TestController } from './test.controller';
 import { VehiculoEntity } from './vehiculo/vehiculo.entity';
 
-
+const isTestEnv = process.env.NODE_ENV === 'test';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: '192.168.90.209',
-      port: 5432,
-      username: 'seguros_inst_db',
-      password: '1920siadmin',
-      database: 'sonora_dig',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
-      logging: 'all', // Habilitar logging
-    }),
-    TypeOrmModule.forFeature([VehiculoEntity]), // Importar la entidad que usarás en el test
+    // Condicionalmente importar TypeOrmModule si no estamos en el entorno de prueba
+    ...(isTestEnv ? [] : [TypeOrmModule.forRoot(ormConfig)]),
+    ...(isTestEnv ? [] : [TypeOrmModule.forFeature([VehiculoEntity])]),
   ],
   controllers: [
     VehiculoController,
