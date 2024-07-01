@@ -14,7 +14,7 @@ import { RamPolizasComponent } from './modules/main/pages/Catalogos/ram-polizas/
 import { TipoAeronaveComponent } from './modules/main/pages/Catalogos/tipo-aeronave/tipo-aeronave.component'
 import { TipoDocumentComponent } from './modules/main/pages/Catalogos/tipo-document/tipo-document.component'
 import { TipoVehiculoComponent } from './modules/main/pages/Catalogos/tipo-vehiculo/tipo-vehiculo.component'
-import { UsuariosComponent } from './modules/main/pages/Usuarios/Usuarios.component'
+import { UsuariosComponent } from './modules/main/pages/usuarios/usuarios.component'
 
 import { NgModule } from '@angular/core';
 
@@ -22,47 +22,81 @@ export const routes: Routes = [
 
     {
         path: '',
-        component: LabsComponent
+        component: LabsComponent,
+        data: {
+            title: 'Dashboard'
+        }
     },
     {
         path: 'prueba',
-        component: Pag2Component
+        component: Pag2Component,
+        data: {
+            title: 'Vehiculos'
+        }
     },
     {
         path: 'Aseguradoras',
-        component: AseguradoraComponent
+        component: AseguradoraComponent,
+        data: {
+            title: 'Aseguradoras'
+        }
     },
     {
         path: 'FabricantesdeAeronaves',
-        component: FabAeronavesComponent
+        component: FabAeronavesComponent,
+        data: {
+            title: 'Fabricantes de Aeronaves'
+        }
     },
     {
         path: 'MarcasdeVehiculos',
-        component: MarVehiculosComponent
+        component: MarVehiculosComponent,
+        data: {
+            title: 'Marcas de Vehiculos'
+        }
     },
     {
         path: 'NivelesdeBlindaje',
-        component: NivBlindajeComponent
+        component: NivBlindajeComponent,
+        data: {
+            title: 'Niveles de Blindaje'
+        }
     },
     {
         path: 'RamosdePóliza',
-        component: RamPolizasComponent
+        component: RamPolizasComponent,
+        data: {
+            title: 'Ramos de Póliza'
+        }
     },
     {
         path: 'TiposdeAeronave',
-        component: TipoAeronaveComponent
+        component: TipoAeronaveComponent,
+        data: {
+            title: 'Tipos de Aeronaves'
+        }
     },
     {
         path: 'TiposdeDocumentos',
-        component: TipoDocumentComponent
+        component: TipoDocumentComponent,
+        data: {
+            title: 'Tipos de Documentos'
+        }
     },
     {
         path: 'TiposdeVehículos',
         component: TipoVehiculoComponent
+        ,
+        data: {
+            title: 'Tipos de Vehiculos'
+        }
     },
     {
         path: 'Usuarios',
-        component: UsuariosComponent
+        component: UsuariosComponent,
+        data: {
+            title: 'Usuarios'
+        }
     },
 
 ];
