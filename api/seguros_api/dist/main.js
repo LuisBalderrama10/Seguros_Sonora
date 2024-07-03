@@ -6,6 +6,9 @@ const app_module_1 = require("./app.module");
 async function bootstrap() {
     console.log('Current environment:', process.env.NODE_ENV);
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors({
+        origin: 'http://localhost:4200',
+    });
     const config = new swagger_1.DocumentBuilder()
         .setTitle('SegurosSonora')
         .setDescription('Api de seguros sonora')

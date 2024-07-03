@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ormConfig } from './ormconfig';  // Asegúrate de que la ruta es correcta
+//import { TypeOrmModule } from '@nestjs/typeorm';
+//import { ormConfig } from './ormconfig';  // Asegúrate de que la ruta es correcta
 
 import { VehiculoController } from './vehiculo/vehiculos.controller';
 import { VehiculoServicio } from './vehiculo/vehiculos.services';
@@ -13,33 +13,33 @@ import { MarcaVehiculoServicio } from './vehiculo/marca_vehiculo/marca.vehiculo.
 import { AeronaveController } from './aeronave/aeronave.controller';
 import { AeronaveServicio } from './aeronave/aeronave.services';
 
-import { ConnectionService } from './connection.service';
-import { TestController } from './test.controller';
-import { VehiculoEntity } from './vehiculo/vehiculo.entity';
+//import { ConnectionService } from './connection.service';
+//import { TestController } from './test.controller';
+//import { VehiculoEntity } from './vehiculo/vehiculo.entity';
 
 const isTestEnv = process.env.NODE_ENV === 'test';
 
 @Module({
   imports: [
-    // Condicionalmente importar TypeOrmModule si no estamos en el entorno de prueba
+  /*  // Condicionalmente importar TypeOrmModule si no estamos en el entorno de prueba
     ...(isTestEnv ? [] : [TypeOrmModule.forRoot(ormConfig)]),
     ...(isTestEnv ? [] : [TypeOrmModule.forFeature([VehiculoEntity])]),
-  ],
+  */],
   controllers: [
     VehiculoController,
     AseguradoraController,
     FaeronvaeController,
     MarcaVehiculoController,
-    AeronaveController,
-    TestController,
+    //AeronaveController,
+    //TestController,
   ],
   providers: [
     VehiculoServicio,
     AseguradoraServicio,
     FabricanteAeronaveServicio,
     MarcaVehiculoServicio,
-    AeronaveServicio,
-    ConnectionService,
+    //AeronaveServicio,
+    //ConnectionService,
   ],
 })
 export class AppModule {}

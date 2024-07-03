@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+/*import { Injectable } from '@nestjs/common';
 import { Connection } from 'typeorm';
 
 @Injectable()
@@ -13,4 +13,4 @@ export class ConnectionService {
         console.error('Error connecting to the database', error);
       });
   }
-}
+}*/

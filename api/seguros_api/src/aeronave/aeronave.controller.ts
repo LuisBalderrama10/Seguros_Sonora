@@ -3,7 +3,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { AeronaveServicio } from './aeronave.services';
 import { Aeronave } from './aeronave.model';
 
-@Controller('vehiculos')
+@Controller('aeronaves')
 export class AeronaveController {
   constructor(private readonly aeronaveServicio: AeronaveController) {}
 

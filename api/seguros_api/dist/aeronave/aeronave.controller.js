@@ -71,7 +71,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AeronaveController.prototype, "deleteProduct", null);
 exports.AeronaveController = AeronaveController = __decorate([
-    (0, common_1.Controller)('vehiculos'),
+    (0, common_1.Controller)('aeronaves'),
     __metadata("design:paramtypes", [AeronaveController])
 ], AeronaveController);
 //# sourceMappingURL=aeronave.controller.js.map
