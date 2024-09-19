@@ -1,45 +1,20 @@
 import { Module } from '@nestjs/common';
-//import { TypeOrmModule } from '@nestjs/typeorm';
-//import { ormConfig } from './ormconfig';  // Asegúrate de que la ruta es correcta
-
-import { VehiculoController } from './vehiculo/vehiculos.controller';
-import { VehiculoServicio } from './vehiculo/vehiculos.services';
-import { AseguradoraController } from './aseguradora/aseguradora.controllers';
-import { AseguradoraServicio } from './aseguradora/aseguradoras.services';
-import { FaeronvaeController } from './aeronave/fabricante_aeronave/fabricante.aeronave.controller';
-import { FabricanteAeronaveServicio } from './aeronave/fabricante_aeronave/fabricante.aeronave.service';
-import { MarcaVehiculoController } from './vehiculo/marca_vehiculo/marca.vehiculo.controller';
-import { MarcaVehiculoServicio } from './vehiculo/marca_vehiculo/marca.vehiculo.services';
-import { AeronaveController } from './aeronave/aeronave.controller';
-import { AeronaveServicio } from './aeronave/aeronave.services';
-
-//import { ConnectionService } from './connection.service';
-//import { TestController } from './test.controller';
-//import { VehiculoEntity } from './vehiculo/vehiculo.entity';
-
-const isTestEnv = process.env.NODE_ENV === 'test';
+import { TypeOrmModule } from '@nestjs/typeorm';
+//import { UsersModule } from './users/users.module'; // Asegúrate de tener un módulo de usuarios
 
 @Module({
   imports: [
-  /*  // Condicionalmente importar TypeOrmModule si no estamos en el entorno de prueba
-    ...(isTestEnv ? [] : [TypeOrmModule.forRoot(ormConfig)]),
-    ...(isTestEnv ? [] : [TypeOrmModule.forFeature([VehiculoEntity])]),
-  */],
-  controllers: [
-    VehiculoController,
-    AseguradoraController,
-    FaeronvaeController,
-    MarcaVehiculoController,
-    //AeronaveController,
-    //TestController,
-  ],
-  providers: [
-    VehiculoServicio,
-    AseguradoraServicio,
-    FabricanteAeronaveServicio,
-    MarcaVehiculoServicio,
-    //AeronaveServicio,
-    //ConnectionService,
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'admin',
+      database: 'seguros_inst_db',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
+    }),
+    //UsersModule, // Importa otros módulos aquí
   ],
 })
 export class AppModule {}
