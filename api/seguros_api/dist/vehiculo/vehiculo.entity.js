@@ -9,48 +9,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VehiculoEntity = void 0;
+exports.Vehiculo = void 0;
 const typeorm_1 = require("typeorm");
-let VehiculoEntity = class VehiculoEntity {
-};
-exports.VehiculoEntity = VehiculoEntity;
+const vehiculo_marca_entity_1 = require("./vehiculo_marca.entity");
+class Vehiculo {
+}
+exports.Vehiculo = Vehiculo;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], VehiculoEntity.prototype, "id", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 100 }),
-    __metadata("design:type", String)
-], VehiculoEntity.prototype, "marca", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 100 }),
-    __metadata("design:type", String)
-], VehiculoEntity.prototype, "modelo", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'int' }),
-    __metadata("design:type", Number)
-], VehiculoEntity.prototype, "anio", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 100 }),
-    __metadata("design:type", String)
-], VehiculoEntity.prototype, "color", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'varchar', length: 100, unique: true }),
-    __metadata("design:type", String)
-], VehiculoEntity.prototype, "numeroSerie", void 0);
+], Vehiculo.prototype, "id_vehiculo", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: 'varchar', length: 50 }),
     __metadata("design:type", String)
-], VehiculoEntity.prototype, "tipo", void 0);
+], Vehiculo.prototype, "numero_serie", void 0);
+__decorate([
+    (0, typeorm_1.OneToOne)(() => vehiculo_marca_entity_1.Marca_vehiculo, marca_vehiculo => marca_vehiculo.vehiculo, { nullable: false }),
+    __metadata("design:type", Array)
+], Vehiculo.prototype, "marca_vehiculo", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'int' }),
+    __metadata("design:type", Number)
+], Vehiculo.prototype, "modelo", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: 'varchar', length: 100 }),
     __metadata("design:type", String)
-], VehiculoEntity.prototype, "aseguradora", void 0);
+], Vehiculo.prototype, "colosar", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'date' }),
-    __metadata("design:type", Date)
-], VehiculoEntity.prototype, "fechaRegistro", void 0);
-exports.VehiculoEntity = VehiculoEntity = __decorate([
-    (0, typeorm_1.Entity)('vehiculos')
-], VehiculoEntity);
+    (0, typeorm_1.Column)({ type: 'varchar', length: 20, unique: true }),
+    __metadata("design:type", String)
+], Vehiculo.prototype, "placas", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', length: 50 }),
+    __metadata("design:type", String)
+], Vehiculo.prototype, "tipasaso", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', length: 20 }),
+    __metadata("design:type", String)
+], Vehiculo.prototype, "color", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'int', length: 2 }),
+    __metadata("design:type", Number)
+], Vehiculo.prototype, "numero_cilindros", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', length: 50 }),
+    __metadata("design:type", String)
+], Vehiculo.prototype, "numero_activo_sap", void 0);
 //# sourceMappingURL=vehiculo.entity.js.map

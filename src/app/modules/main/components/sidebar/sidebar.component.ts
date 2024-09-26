@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class SidebarComponent {
   isMenuOpened: boolean = false;
   isMenuOpened2: boolean = false;
+
   toggleMenu(event: Event): void {
     this.isMenuOpened = !this.isMenuOpened;
     event.stopPropagation();
@@ -64,6 +65,9 @@ export class SidebarComponent {
   }
   redirigirAUsuarios(): void {
     this.router.navigate(['/Usuarios']);
+  }
+  redirigirAVehiculos(): void {
+    this.router.navigate(['/Vehiculos']);
   }
 
 }

@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "types": ["node", "bonjour"],
       "module": "commonjs",
       "declaration": true,
       "removeComments": true,

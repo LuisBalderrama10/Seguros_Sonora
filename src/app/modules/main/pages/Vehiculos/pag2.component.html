@@ -18,7 +18,7 @@
       <h1 class="text-1xl mb-2 text-gray-400">Inicio / Vehiculos</h1>
       <div class="button-container flex justify-between items-center py-4">
       <div>
-        <button style="background-color: #237469;"
+        <button  id="agregarBtn" style="background-color: #237469;"
           class="hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-4">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAARklEQVR4nO3TuwkAIBAE0e2/LA/rGkEvVBM1EPY1MHAfyW4CKhAvA50DSyS9ggOMOz8VuxnHhUDxkvEfLJH0cyCO7tw00QDMDQ0ibM3nhAAAAABJRU5ErkJggg=="
@@ -66,12 +66,13 @@
             </th>
             <th class="px-4 py-2">Serie</th>
             <th class="px-4 py-2">Marca</th>
-            <th class="px-4 py-2">Línea</th>
             <th class="px-4 py-2">Modelo</th>
+            <th class="px-4 py-2">Tipo de Vehículo</th>
             <th class="px-4 py-2">Placas</th>
-            <th class="px-4 py-2">Unidad Administrativa</th>
-            <th class="px-4 py-2">Número de Póliza</th>
-            <th class="px-4 py-2">Inciso</th>
+            <th class="px-4 py-2">Dependencia</th>
+            <th class="px-4 py-2">Color</th>
+            <th class="px-4 py-2">Cilindros</th>
+            <th class="px-4 py-2">No. Activo</th>
             <th class="px-4 py-2">Siniestrado</th>
           </tr>
         </thead>
@@ -88,6 +89,7 @@
             <td class="px-4 py-2">VC3118</td>
             <td class="px-4 py-2">DIRECCIÓN GENERAL DE ADMINISTRACIÓN</td>
             <td class="px-4 py-2">320102750500-001</td>
+            <td class="px-4 py-2">001</td>
             <td class="px-4 py-2">001</td>
             <td class="px-4 py-2">SI</td>
           </tr>
@@ -134,10 +136,31 @@
       </div>
 
     </div>
+
     </div>
-    
-    
   </div>
+
+  <!-- Formulario para agregar vehículo -->
+   
+  <div id="vehiculoForm" class="hidden mb-4">
+    <h2 class="text-lg font-bold mb-2">Agregar Vehículo</h2>
+    <form id="form" onsubmit="agregarVehiculo(event)">
+      <div class="grid grid-cols-2 gap-4">
+        <input type="text" name="numero_serie" placeholder="Número de Serie">
+        <input type="text" name="marca_vehiculo" placeholder="Marca">
+        <input type="number" name="modelo" placeholder="Año" >
+        <input type="text" name="tipo_vehiculo" placeholder="Tipo de Vehículo" >
+        <input type="text" name="placas" placeholder="Placas" >
+        <input type="text" name="dependencia" placeholder="Dependencia" >
+        <input type="text" name="color" placeholder="Color" >
+        <input type="number" name="numero_cilindros" chayplaceholder="Número de Cilindros" >
+        <input type="text" name="numero_activo_sap" placeholder="No. Activo" >
+        <input type="text" name="siniestrado" placeholder="Siniestrado" >
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded mt-4">Agregar Vehículo</button>
+      </div>
+    </form>
+  </div>
+  
 </body>
 
 </html>

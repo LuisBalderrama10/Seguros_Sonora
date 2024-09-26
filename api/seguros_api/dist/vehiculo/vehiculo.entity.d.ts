@@ -1,11 +1,13 @@
-export declare class VehiculoEntity {
-    id: number;
-    marca: string;
-    modelo: string;
-    anio: number;
+import { Marca_vehiculo } from './vehiculo_marca.entity';
+export declare class Vehiculo {
+    id_vehiculo: number;
+    numero_serie: string;
+    marca_vehiculo: Marca_vehiculo[];
+    modelo: number;
+    colosar: string;
+    placas: string;
+    tipasaso: string;
     color: string;
-    numeroSerie: string;
-    tipo: string;
-    aseguradora: string;
-    fechaRegistro: Date;
+    numero_cilindros: number;
+    numero_activo_sap: string;
 }

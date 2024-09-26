@@ -9,10 +9,13 @@ async function bootstrap() {
         .setTitle('API de Seguros')
         .setDescription('Documentación de la API de Seguros')
         .setVersion('1.0')
+        .addTag('users')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);
-    await app.listen(3000);
+    const port = process.env.PORT || 3002;
+    await app.listen(port);
+    console.log(`Server is running on port ${port}`);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map
