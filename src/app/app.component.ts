@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
-  templateUrl: './modules/main/pages/Vehiculos/pag2.component.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./modules/main/pages/Vehiculos/pag2.component.css']
 })
 export class AppComponent {
