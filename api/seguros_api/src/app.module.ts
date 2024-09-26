@@ -1,7 +1,19 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Usuario } from './usuario/usuario.entity';
+import { Controller, Get } from '@nestjs/common'
+import { AppService } from './app.service';
+//import { UsersModule } from './users/users.module';
+//import { AuthModule } from './auth/auth.module';
 //import { UsersModule } from './users/users.module'; // Asegúrate de tener un módulo de usuarios
 
+@Controller()
+export class AppController {
+  @Get()
+  getRoot(): string {
+    return 'Welcome to the API!';
+  }
+}
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -11,10 +23,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'postgres',
       password: 'admin',
       database: 'seguros_inst_db',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [Usuario],
       synchronize: true,
     }),
-    //UsersModule, // Importa otros módulos aquí
+    //UsersModule,
+    //AuthModule, // Importa otros módulos aquí
+  ],
+  controllers: [
+    AppController
+  ],
+  providers: [
+    AppService
   ],
 })
 export class AppModule {}

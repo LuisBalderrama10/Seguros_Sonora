@@ -1,6 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, OneToOne } from 'typeorm';
 import { Aeronave } from 'src/aeronave/aeronave.entity';
 import { Tipo_Siniestro } from './siniestro_tipo.entity';
+import { Inmueble } from 'src/inmueble/inmueble.entity';
+import { Vehiculo } from 'src/vehiculo/vehiculo.entity';
 
 @Entity()
 export class Siniestro {
@@ -19,6 +21,13 @@ export class Siniestro {
   @Column({type: 'numeric', length: 10, nullable: false})
   monto_reclamado: number;
 
+  //Llaves que necesitan de siniestro
   @ManyToMany(() => Aeronave, aeronave => aeronave.siniestro)
     aeronave: Aeronave[];
+
+    @OneToMany(() => Inmueble, inmuebles => inmuebles.siniestro)
+    inmuebles: Inmueble[];
+
+    @OneToOne(() => Vehiculo, vehiculo => vehiculo.siniestro, {nullable: false})
+    vehiculo: Vehiculo[];
 }

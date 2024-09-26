@@ -1,23 +1,31 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('users')
-export class UserEntity {
+export class Usuario {
   @PrimaryGeneratedColumn()
-  id: number;
+  id_usuario: number;
 
-  @Column({ type: 'varchar', length: 100 })
+  /**llave foranea de dependencia */
+  @Column({type: 'int', nullable: false})
+  id_dependencia: number;
+
+  /**llave foranea de rol */
+  @Column({type: 'int', nullable: false})
+  id_rol: number;
+
+  @Column({ type: 'varchar', length: 100, nullable: false })
   nombre: string;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column({ type: 'varchar', length: 100, nullable: false })
   direccion: string;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'bigint', nullable: false})
   telefono: number;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column({ type: 'varchar', length: 100, nullable: false })
   email: string;
 
-  @Column({ type: 'varchar', length: 100, unique: true })
+  @Column({ type: 'varchar', length: 100, unique: true, nullable: false })
   responsable: string;
 
 }
