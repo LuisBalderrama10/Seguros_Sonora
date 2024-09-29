@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 
 
 import { LabsComponent } from './modules/main/pages/Dashboard/labs.component';
-import { Pag2Component } from './modules/main/pages/Vehiculos/pag2.component';
 import { AseguradoraComponent } from './modules/main/pages/Catalogos/aseguradora/aseguradora.component'
 import { FabAeronavesComponent } from './modules/main/pages/Catalogos/fab-aeronaves/fab-aeronaves.component'
 import { MarVehiculosComponent } from './modules/main/pages/Catalogos/mar-vehiculos/mar-vehiculos.component'
@@ -27,13 +26,7 @@ export const routes: Routes = [
             title: 'Dashboard'
         }
     },
-    {
-        path: 'prueba',
-        component: Pag2Component,
-        data: {
-            title: 'Vehiculos'
-        }
-    },
+
     {
         path: 'Aseguradoras',
         component: AseguradoraComponent,
