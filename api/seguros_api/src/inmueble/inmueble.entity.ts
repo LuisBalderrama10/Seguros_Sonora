@@ -30,5 +30,4 @@ export class Inmueble {
   accidentes_escolares: Accidente_escolares[];
   */
 
-/**me gusta el muralla10 */  
 }
