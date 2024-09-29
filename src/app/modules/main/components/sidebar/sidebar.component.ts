@@ -1,16 +1,17 @@
-import { Component, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// import { RouterOutlet } from '@angular/router';
+// import { CommonModule } from '@angular/common';
+// import { Router } from '@angular/router';
 
 @Component({
+  standalone:true,
   selector: 'app-sidebar',
-  standalone: true,
-  imports: [RouterOutlet, CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+ 
   isMenuOpened: boolean = false;
   isMenuOpened2: boolean = false;
 
@@ -32,6 +33,7 @@ export class SidebarComponent {
   }
 
   constructor(private router: Router) { }
+
 
   redirigirAPagina(): void {
     this.router.navigate(['/prueba']);
