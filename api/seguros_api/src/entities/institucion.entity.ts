@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany } from 'typeorm';
-import { Dependencia } from 'src/dependencia/dependencia.entity';
+import { Dependencia } from 'src/entities/dependencia.entity';
 
 @Entity()
 export class Institucion {
