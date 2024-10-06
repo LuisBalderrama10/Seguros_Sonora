@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable, ManyToOne, OneToOne } from 'typeorm';
 import { Aeronave_fabricante } from './aeronave_fabricante.entity';
-import { Dependencia } from 'src/dependencia/dependencia.entity';
+import { Dependencia } from 'src/entities/dependencia.entity';
 import { Siniestro } from 'src/siniestro/siniestro.entity';
 
 @Entity()

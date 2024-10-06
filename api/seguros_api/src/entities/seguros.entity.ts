@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { Tipo_seguro } from './seguro_tipo.entity';
 import { Poliza } from 'src/poliza/poliza.entity';
-import { Aseguradora } from 'src/aseguradora/aseguradora.entity';
-import { Dependencia } from 'src/dependencia/dependencia.entity';
+import { Aseguradora } from 'src/entities/aseguradora.entity';
+import { Dependencia } from 'src/entities/dependencia.entity';
 
 @Entity()
 export class Seguros {

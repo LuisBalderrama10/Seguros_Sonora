@@ -1,4 +1,4 @@
-import { Dependencia } from 'src/dependencia/dependencia.entity';
+import { Dependencia } from 'src/entities/dependencia.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable, ManyToOne } from 'typeorm';
 
 @Entity()
