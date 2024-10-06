@@ -1,7 +1,7 @@
 const express = require('express');
 const { Client } = require('pg');
 const app = express();
-const port = 3002;
+const port = 3001;
 
 const client = new Client({
   user: 'postgres',
