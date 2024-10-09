@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class  Tipo_inmuebleService {
-    getAllRoles(): string {
+    getAllTipo_inmueble(): string {
         return 'Devuelve todas los tipos de inmuebles!';
     }
 }

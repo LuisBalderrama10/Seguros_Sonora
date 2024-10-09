@@ -6,7 +6,7 @@ export class AseguradoraController {
     constructor (private readonly aseguradora_Service: Aseguradora_Service) {}
 
     @Get('allAseguradora')
-    getUsuarios(): string {
+    getAseguradora(): string {
         return this.aseguradora_Service.getAllAseguradora();
     }
 

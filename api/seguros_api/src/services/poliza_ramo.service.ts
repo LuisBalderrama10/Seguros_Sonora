@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class  PolizaRamoService {
-    getAllInstituciones(): string {
+    getAllPoliza_ramo(): string {
         return 'Devuelve todas los ramos de polizas!';
     }
 }

@@ -6,7 +6,7 @@ export class Aeronave_FabricanteController {
     constructor (private readonly aeronave_fabricanteService: Aeronave_Fabricante_Service) {}
 
     @Get('allAeronave_fabricante')
-    getUsuarios(): string {
+    getAeronaves_fabricantes(): string {
         return this.aeronave_fabricanteService.getAllFabricante();
     }
 

@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class  VehiculoMarcaService {
-    getAllRoles(): string {
+    getAllVehiculo_marca(): string {
         return 'Devuelve todas las marcas de los vehiculos!';
     }
 }

@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class  SiniestroService {
-    getAllRoles(): string {
+    getAllSiniestros(): string {
         return 'Devuelve todas los siniestros!';
     }
 }
