@@ -1,4 +1,4 @@
-import { Seguros } from 'src/seguros/seguros.entity';
+import { Seguros } from 'src/entities/seguros.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable, ManyToOne } from 'typeorm';
 
 @Entity()

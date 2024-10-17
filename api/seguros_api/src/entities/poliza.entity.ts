@@ -1,4 +1,4 @@
-import { Seguros } from 'src/seguros/seguros.entity';
+import { Seguros } from 'src/entities/seguros.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, OneToOne} from 'typeorm';
 import { Ramo_poliza } from './poliza.ramo.entity';
 

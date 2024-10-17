@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToOne, ManyToOne, ManyToMany
 import { Marca_vehiculo } from './vehiculo_marca.entity';
 import { Tipo_vehiculo } from './vehiculo_tipo.entity';
 import { Dependencia } from 'src/entities/dependencia.entity';
-import { Siniestro } from 'src/siniestro/siniestro.entity';
+import { Siniestro } from 'src/entities/siniestro.entity';
 
 export class Vehiculo {
   @PrimaryGeneratedColumn()

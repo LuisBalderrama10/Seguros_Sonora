@@ -10,7 +10,6 @@ async function bootstrap() {
     .setTitle('API de Seguros')
     .setDescription('Documentación de la API de Seguros')
     .setVersion('1.0')
-    .addTag('users')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
