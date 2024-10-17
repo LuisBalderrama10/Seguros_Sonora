@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, OneToOne } from 'typeorm';
-import { Aeronave } from 'src/aeronave/aeronave.entity';
+import { Aeronave } from 'src/entities/aeronave.entity';
 import { Tipo_Siniestro } from './siniestro_tipo.entity';
-import { Inmueble } from 'src/inmueble/inmueble.entity';
-import { Vehiculo } from 'src/vehiculo/vehiculo.entity';
+import { Inmueble } from 'src/entities/inmueble.entity';
+import { Vehiculo } from 'src/entities/vehiculo.entity';
 
 @Entity()
 export class Siniestro {

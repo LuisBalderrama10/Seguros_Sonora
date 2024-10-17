@@ -1,10 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable, ManyToOne } from 'typeorm';
 import {Institucion} from './institucion.entity';
-import { Aeronave } from 'src/aeronave/aeronave.entity';
+import { Aeronave } from 'src/entities/aeronave.entity';
 import { Accidente_escolares } from 'src/entities/accidentes_escolares.entity';
-import { Inmueble } from 'src/inmueble/inmueble.entity';
-import { Vehiculo } from 'src/vehiculo/vehiculo.entity';
-import { Seguros } from 'src/seguros/seguros.entity';
+import { Inmueble } from 'src/entities/inmueble.entity';
+import { Vehiculo } from 'src/entities/vehiculo.entity';
+import { Seguros } from 'src/entities/seguros.entity';
 
 
 export class Dependencia {
