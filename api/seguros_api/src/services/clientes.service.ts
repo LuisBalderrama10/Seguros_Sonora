@@ -1,12 +1,12 @@
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
-export class  UsuarioService {
-    getAllUsuarios(): string {
+export class  ClienteService {
+    getAllClientes(): string {
         return 'Devuelve un usuario!';
     }
 
-    getOneUsuario(): string {
+    getOneCliente(): string {
         return 'Devuelve un usuario!';
     }
 }
