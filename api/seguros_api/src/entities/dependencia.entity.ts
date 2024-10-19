@@ -6,7 +6,7 @@ import { Inmueble } from 'src/entities/inmueble.entity';
 import { Vehiculo } from 'src/entities/vehiculo.entity';
 import { Seguros } from 'src/entities/seguros.entity';
 
-
+@Entity('dependencia')
 export class Dependencia {
   @PrimaryGeneratedColumn()
   id_dependencia: number;

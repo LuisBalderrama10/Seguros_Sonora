@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Usuario } from './entities/usuario.entity';
 import { Controller, Get } from '@nestjs/common'
 import { AppService } from './app.service';
+import { AppController } from './app.controller';
+import { AppDataSource } from './data-source';
 
 import { AccidentesEscolaresModule } from './modules/accidentes_escolares.module';
 import { AeronaveFabricanteModule } from './modules/aeronave_fabricante.module';
@@ -25,25 +26,16 @@ import { VehiculoModule } from './modules/vehiculo.module';
 import { VehiculoMarcaModule } from './modules/vehiculo_marca.module';
 import { VehiculoTipoModule } from './modules/vehiculo_tipo.module';
 
-@Controller()
-export class AppController {
-  @Get()
-  getRoot(): string {
-    return 'Welcome to the API!';
-  }
-}
+//@Controller()
+//export class AppController {
+  //@Get()
+  //getRoot(): string {
+    //return 'Welcome to the API!';
+  //}
+//}
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'admin',
-      database: 'seguros_inst_db',
-      entities: [Usuario],
-      synchronize: true,
-    }),
+    TypeOrmModule.forRoot(AppDataSource.options),
     AccidentesEscolaresModule,
     AeronaveFabricanteModule,
     AeronaveModule,

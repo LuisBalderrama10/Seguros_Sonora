@@ -4,6 +4,7 @@ import { Tipo_vehiculo } from './vehiculo_tipo.entity';
 import { Dependencia } from 'src/entities/dependencia.entity';
 import { Siniestro } from 'src/entities/siniestro.entity';
 
+@Entity()
 export class Vehiculo {
   @PrimaryGeneratedColumn()
   id_vehiculo: number;
