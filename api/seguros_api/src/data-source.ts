@@ -1,5 +1,6 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 import { config } from "process";
+import * as path from 'path';
 
 const dataSourceOptions: DataSourceOptions = {
     type: 'postgres',
@@ -8,8 +9,8 @@ const dataSourceOptions: DataSourceOptions = {
     username: 'postgres',
     password: 'admin',
     database: 'seguros_inst_db',
-    entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    migrations: [__dirname + '/migrations/**/*.{.ts,.js}'],
+    entities: [path.join(__dirname, '**', '*.entity.{ts,js}')],
+    migrations: [path.join(__dirname, 'migrations', '**', '*.{ts,js}')],
     synchronize: false,
 };
 

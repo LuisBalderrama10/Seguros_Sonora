@@ -26,13 +26,7 @@ import { VehiculoModule } from './modules/vehiculo.module';
 import { VehiculoMarcaModule } from './modules/vehiculo_marca.module';
 import { VehiculoTipoModule } from './modules/vehiculo_tipo.module';
 
-//@Controller()
-//export class AppController {
-  //@Get()
-  //getRoot(): string {
-    //return 'Welcome to the API!';
-  //}
-//}
+
 @Module({
   imports: [
     TypeOrmModule.forRoot(AppDataSource.options),

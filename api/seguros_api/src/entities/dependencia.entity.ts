@@ -2,9 +2,9 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTabl
 import {Institucion} from './institucion.entity';
 import { Aeronave } from 'src/entities/aeronave.entity';
 import { Accidente_escolares } from 'src/entities/accidentes_escolares.entity';
-import { Inmueble } from 'src/entities/inmueble.entity';
-import { Vehiculo } from 'src/entities/vehiculo.entity';
-import { Seguros } from 'src/entities/seguros.entity';
+import { Inmueble } from './inmueble.entity';
+import { Vehiculo } from './vehiculo.entity';
+import { Seguros } from './seguros.entity';
 
 @Entity('dependencia')
 export class Dependencia {
