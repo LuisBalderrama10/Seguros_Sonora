@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 // import { RouterOutlet } from '@angular/router';
 // import { CommonModule } from '@angular/common';
 // import { Router } from '@angular/router';
@@ -8,10 +9,11 @@ import { Router } from '@angular/router';
   standalone:true,
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrl: './sidebar.component.css',
+  imports: [CommonModule]
 })
 export class SidebarComponent {
- 
+
   isMenuOpened: boolean = false;
   isMenuOpened2: boolean = false;
 
