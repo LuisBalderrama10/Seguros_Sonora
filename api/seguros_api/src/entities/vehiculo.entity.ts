@@ -31,7 +31,7 @@ export class Vehiculo {
   @Column({ type: 'varchar', length: 20 })
   color: string;
 
-  @Column({ type: 'int', length: 2 })
+  @Column({ type: 'int' })
   numero_cilindros: number;
 
   @Column({ type: 'varchar', length: 50 })

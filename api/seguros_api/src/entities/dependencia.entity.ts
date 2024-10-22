@@ -1,12 +1,12 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable, ManyToOne } from 'typeorm';
 import {Institucion} from './institucion.entity';
-import { Aeronave } from 'src/entities/aeronave.entity';
-import { Accidente_escolares } from 'src/entities/accidentes_escolares.entity';
+import { Aeronave } from './aeronave.entity';
+import { Accidente_escolares } from './accidentes_escolares.entity';
 import { Inmueble } from './inmueble.entity';
 import { Vehiculo } from './vehiculo.entity';
 import { Seguros } from './seguros.entity';
 
-@Entity('dependencia')
+@Entity('dependencias')
 export class Dependencia {
   @PrimaryGeneratedColumn()
   id_dependencia: number;
@@ -17,7 +17,7 @@ export class Dependencia {
   @Column({type: 'varchar', nullable: false})
   direccion: string;
 
-  @Column({type: 'int', length: 10})
+  @Column({type: 'int'})
   telefono: number;
   
   @Column({type: 'varchar', length: 100})

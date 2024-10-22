@@ -11,7 +11,7 @@ export class Clientes {
   @Column({type: 'varchar', nullable: false})
   direccion: string;
 
-  @Column({type: 'int', length: 10,  nullable: false})
+  @Column({type: 'int',  nullable: false})
   telefono: number;
   
   @Column({type: 'varchar', length: 100, nullable: false})

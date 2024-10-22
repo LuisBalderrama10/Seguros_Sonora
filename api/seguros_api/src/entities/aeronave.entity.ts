@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable, ManyToOne, OneToOne } from 'typeorm';
 import { Aeronave_fabricante } from './aeronave_fabricante.entity';
-import { Dependencia } from 'src/entities/dependencia.entity';
-import { Siniestro } from 'src/entities/siniestro.entity';
+import { Dependencia } from './dependencia.entity';
+import { Siniestro } from './siniestro.entity';
 
 @Entity()
 export class Aeronave {
@@ -26,7 +26,7 @@ export class Aeronave {
   @Column({type: 'varchar', length: 15, nullable: false})
   color: string;
 
-  @Column({type: 'int', length: 20, nullable: false})
+  @Column({type: 'int', nullable: false})
   numero_activo_sap: number;
 
   @OneToOne(() => Siniestro, siniestro => siniestro.aeronave, {nullable: false})

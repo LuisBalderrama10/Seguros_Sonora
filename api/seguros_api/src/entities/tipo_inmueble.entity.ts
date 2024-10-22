@@ -1,6 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, JoinTable, ManyToOne } from 'typeorm';
 import { Inmueble } from './inmueble.entity';
-import { Dependencia } from 'src/entities/dependencia.entity';
 
 @Entity()
 export class Tipo_inmueble {

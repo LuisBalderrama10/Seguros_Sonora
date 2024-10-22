@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, OneToOne } from 'typeorm';
-import { Aeronave } from 'src/entities/aeronave.entity';
+import { Aeronave } from './aeronave.entity';
 import { Tipo_Siniestro } from './siniestro_tipo.entity';
-import { Inmueble } from 'src/entities/inmueble.entity';
-import { Vehiculo } from 'src/entities/vehiculo.entity';
+import { Inmueble } from './inmueble.entity';
+import { Vehiculo } from './vehiculo.entity';
 
 @Entity()
 export class Siniestro {
@@ -18,7 +18,7 @@ export class Siniestro {
   @Column({type: 'varchar', length: 300, nullable: false})
   descripcion: string;
 
-  @Column({type: 'numeric', length: 10, nullable: false})
+  @Column({type: 'numeric', nullable: false})
   monto_reclamado: number;
 
   //Llaves que necesitan de siniestro
