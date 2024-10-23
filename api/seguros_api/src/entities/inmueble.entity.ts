@@ -24,10 +24,4 @@ export class Inmueble {
     @ManyToOne(() => Siniestro, siniestro => siniestro.inmuebles)
     siniestro: Siniestro[];
 
-/*   
-
-  @ManyToOne(() => Accidente_escolares, accidente_escolares => accidente_escolares.dependencia, {nullable: false})
-  accidentes_escolares: Accidente_escolares[];
-  */
-
 }

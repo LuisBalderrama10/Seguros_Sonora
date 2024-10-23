@@ -5,16 +5,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = exports.AppController = void 0;
+exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const usuario_entity_1 = require("./entities/usuario.entity");
-const common_2 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
+const app_controller_1 = require("./app.controller");
+const data_source_1 = require("./data-source");
 const accidentes_escolares_module_1 = require("./modules/accidentes_escolares.module");
 const aeronave_fabricante_module_1 = require("./modules/aeronave_fabricante.module");
 const aeronave_module_1 = require("./modules/aeronave.module");
@@ -31,41 +28,18 @@ const seguro_module_1 = require("./modules/seguro.module");
 const seguro_tipo_module_1 = require("./modules/seguro_tipo.module");
 const siniestro_module_1 = require("./modules/siniestro.module");
 const tipo_inmueble_module_1 = require("./modules/tipo_inmueble.module");
-const usuario_module_1 = require("./modules/usuario.module");
 const vehiculo_module_1 = require("./modules/vehiculo.module");
 const vehiculo_marca_module_1 = require("./modules/vehiculo_marca.module");
 const vehiculo_tipo_module_1 = require("./modules/vehiculo_tipo.module");
-let AppController = class AppController {
-    getRoot() {
-        return 'Welcome to the API!';
-    }
-};
-exports.AppController = AppController;
-__decorate([
-    (0, common_2.Get)(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "getRoot", null);
-exports.AppController = AppController = __decorate([
-    (0, common_2.Controller)()
-], AppController);
+const auth_module_1 = require("./auth/auth.module");
+const usuario_module_1 = require("./modules/usuario.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            typeorm_1.TypeOrmModule.forRoot({
-                type: 'postgres',
-                host: 'localhost',
-                port: 5432,
-                username: 'postgres',
-                password: 'admin',
-                database: 'seguros_inst_db',
-                entities: [usuario_entity_1.Usuario],
-                synchronize: true,
-            }),
+            typeorm_1.TypeOrmModule.forRoot(data_source_1.AppDataSource.options),
             accidentes_escolares_module_1.AccidentesEscolaresModule,
             aeronave_fabricante_module_1.AeronaveFabricanteModule,
             aeronave_module_1.AeronaveModule,
@@ -85,10 +59,12 @@ exports.AppModule = AppModule = __decorate([
             usuario_module_1.UsuarioModule,
             vehiculo_marca_module_1.VehiculoMarcaModule,
             vehiculo_module_1.VehiculoModule,
-            vehiculo_tipo_module_1.VehiculoTipoModule
+            vehiculo_tipo_module_1.VehiculoTipoModule,
+            auth_module_1.AuthModule,
+            usuario_module_1.UsuarioModule
         ],
         controllers: [
-            AppController
+            app_controller_1.AppController,
         ],
         providers: [
             app_service_1.AppService

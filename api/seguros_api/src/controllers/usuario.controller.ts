@@ -5,13 +5,13 @@ import { UsuarioService } from "src/services/usuario.service";
 export class UsuarioController {
     constructor (private readonly usuarioService: UsuarioService) {}
 
-    @Get('allUsuarios')
-    getUsuarios(): string {
-        return this.usuarioService.getAllUsuarios();
-    }
+    //@Get('allUsuarios')
+    //getUsuarios(): string {
+    //    return this.usuarioService.getAllUsuarios();
+    //}
 
-    @Get('oneUsuario')
-    getOneUsuario(): string {
-        return this.usuarioService.getOneUsuario();
-    }
+    //@Get('oneUsuario')
+    //getOneUsuario(): string {
+    //    return this.usuarioService.getOneUsuario();
+    //}
 }

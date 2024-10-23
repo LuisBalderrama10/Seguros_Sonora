@@ -21,10 +21,11 @@ import { SeguroModule } from './modules/seguro.module';
 import { SeguroTipoModule } from './modules/seguro_tipo.module';
 import { SiniestroModule } from './modules/siniestro.module';
 import { TipoInmuebleModule } from './modules/tipo_inmueble.module';
-import { UsuarioModule } from './modules/usuario.module';
 import { VehiculoModule } from './modules/vehiculo.module';
 import { VehiculoMarcaModule } from './modules/vehiculo_marca.module';
 import { VehiculoTipoModule } from './modules/vehiculo_tipo.module';
+import { AuthModule } from './auth/auth.module';
+import { UsuarioModule } from './modules/usuario.module';
 
 
 @Module({
@@ -49,10 +50,12 @@ import { VehiculoTipoModule } from './modules/vehiculo_tipo.module';
     UsuarioModule,
     VehiculoMarcaModule,
     VehiculoModule,
-    VehiculoTipoModule
+    VehiculoTipoModule,
+    AuthModule,
+    UsuarioModule
     ],
   controllers: [
-    AppController
+    AppController,
   ],
   providers: [
     AppService
